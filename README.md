@@ -6,10 +6,19 @@ If you want to learn more about Quarkus, please visit its website: https://quark
 
 ## Running the application in dev mode
 
+Make sure that ```Kafka``` and ```Infinispan``` server running in appropriate ports. <p/>
+Also check if Infinispan server has the following user written in properties file.
+```cmd
+quarkus.infinispan-client.auth-username=infinispan
+quarkus.infinispan-client.auth-password=infinispan
+```
+If there is no user with name infinispan, then you can create following below doc https://docs.jboss.org/infinispan/12.1/pdf/server.pdf
+
 You can run your application in dev mode that enables live coding using:
 ```
-./mvnw quarkus:dev
+mvn clean compile quarkus:dev
 ```
+This app tested with maven version 3.6.0
 
 ## Packaging and running the application
 
